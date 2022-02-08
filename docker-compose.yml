@@ -1,0 +1,37 @@
+version: '3.5'
+
+networks:
+  localdev:
+    name: localdev
+
+services:
+  #mysqldb:
+  #  image: mysql:5.7
+  #  restart: always
+  #  environment:
+  #    MYSQL_DATABASE: 'Trading'
+  #    MYSQL_USER: 'user'
+  #    MYSQL_PASSWORD: 'user'
+  #    MYSQL_ROOT_PASSWORD: 'user'
+  #  ports:
+  #    - '3306:3306'
+  #  expose:
+  #    - '3306'
+  #  networks:
+  #    - localdev
+      
+  api:
+    image: tradingapi
+    restart: always
+    container_name: tradingapi
+    #depends_on:
+    #  - mysqldb
+    build:
+      context: Trading
+      dockerfile: Dockerfile
+    #networks:
+    #  - localdev
+    ports:
+      - '7002:80'
+    expose:
+      - '80'

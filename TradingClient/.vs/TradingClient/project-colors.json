@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4983f2cf-d672-4c1c-9aab-1696172a5a4a": {
+      "ProjectGuid": "4983f2cf-d672-4c1c-9aab-1696172a5a4a",
+      "DisplayName": "TradingClient.Presentation.Website",
+      "ColorIndex": 0
+    },
+    "7edd727e-ce40-4743-bd65-0ebdcef6aa1b": {
+      "ProjectGuid": "7edd727e-ce40-4743-bd65-0ebdcef6aa1b",
+      "DisplayName": "TradingClient.Common.Dto",
+      "ColorIndex": 1
+    },
+    "ca4ae0df-5484-4082-819d-3d0e76257ce5": {
+      "ProjectGuid": "ca4ae0df-5484-4082-819d-3d0e76257ce5",
+      "DisplayName": "TradingClient.Business.Logic",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
