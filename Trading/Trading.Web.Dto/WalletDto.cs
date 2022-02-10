@@ -26,7 +26,8 @@ namespace Trading.Web.Dto
                 Amount = walletEntity.Amount,
                 Price = walletEntity.Price,
                 TransactionDate = walletEntity.TransactionDate,
-                StockId = walletEntity.StockId
+                StockId = walletEntity.StockId,
+                Stock = StockDto.MapToStockDto(walletEntity.Stock)
             };
         }
 

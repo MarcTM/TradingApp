@@ -26,7 +26,8 @@ namespace Trading.Domain.Entities
                 Amount = wallet.Amount,
                 Price = wallet.Price,
                 TransactionDate = wallet.TransactionDate,
-                StockId = wallet.StockId
+                StockId = wallet.StockId,
+                Stock = StockEntity.MapToStockEntity(wallet.Stock)
             };
         }
 
