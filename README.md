@@ -2,7 +2,9 @@
 This is a simple trading app done during the Capgemini .NET Bootcamp. The project consists in a trading app, so a logged user can add Stocks to his wallet. The stocks were given by an external api, Alphavantage, and then introduced in our database as the app starts. Even though the application does almost nothing, during the course, we have been trying to implement most of the things we have been learning in this app, like Design Patterns, SOLID Principles, etc.
 
 ## ASP.Net Core Web Api
-This is the Api (backend), so it will have all the endpoints we are going to need.
+This is the Api (backend).
+It is done with DDD Architecture.
+<img src="http://1.bp.blogspot.com/-f9QYYWLc1Uk/UoKzpDHYkkI/AAAAAAAACA4/OD1bq9MLYFY/s1600/DDD_png_pure.png" />
 
 ### Specifications:
 - IIS
