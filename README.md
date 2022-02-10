@@ -4,7 +4,7 @@ This is a simple trading app done during the Capgemini .NET Bootcamp. The projec
 ## ASP.Net Core Web Api
 This is the Api (backend).
 It is done with DDD Architecture.
-<img src="http://1.bp.blogspot.com/-f9QYYWLc1Uk/UoKzpDHYkkI/AAAAAAAACA4/OD1bq9MLYFY/s1600/DDD_png_pure.png" />
+![DDD Architecture](http://1.bp.blogspot.com/-f9QYYWLc1Uk/UoKzpDHYkkI/AAAAAAAACA4/OD1bq9MLYFY/s1600/DDD_png_pure.png)
 
 ### Specifications:
 - IIS
