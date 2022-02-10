@@ -1,13 +1,24 @@
-My specifications:
-> ASP.Net Core Web Api
+# Trading App
+This is a simple trading app done during the Capgemini .NET Bootcamp. The project consists in a trading app, so a logged user can add Stocks to his wallet. The stocks were given by an external api, Alphavantage, and then introduced in our database as the app starts. Even though the application does almost nothing, during the course, we have been trying to implement most of the things we have been learning in this app, like Design Patterns, SOLID Principles, etc.
+
+## ASP.Net Core Web Api
+This is the Api (backend), so it will have all the endpoints we are going to need.
+
+### Specifications:
 - IIS
 - Visual Studio 2022
 - .NET 5
 
-> ASP.NET Core Web App (MVC)
+## ASP.NET Core Web App (MVC)
+This is de MVC Client (frontend). The user will navigate this app, that will request all the information to our Api.
+
+### Specifications:
 - IIS
 - Visual Studio 2022
-- -NET 5
+- .NET 5
+
+## MySQL Database
+The Api is using MySql database. When the app starts, it receives the stocks from Alphavantage and insert them into MySql database.
 
 To download and run this app follow the next steps:
 > Development
