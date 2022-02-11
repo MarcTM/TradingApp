@@ -1,5 +1,5 @@
 # Trading App
-This is a simple trading app done during the Capgemini .NET Bootcamp. The project consists in a trading app, so a logged user can add Stocks to his wallet. The stocks were given by an external api, Alphavantage, and then introduced in our database as the app starts. Even though the application does almost nothing, during the course, we have been trying to implement most of the things we have been learning in this app, like Design Patterns, SOLID Principles, etc.
+This is a simple trading application done during the Capgemini .NET Bootcamp. The project consists in a trading app, so a user can add Stocks to his wallet. The stocks were given by an external api, Alphavantage, and then introduced in my database every time the app starts, to ensure new stocks introduced in their api are introduced in my database too. Even though the application does almost nothing, I have been trying to implement most of the things we have been learning in this app, like Design Patterns, SOLID Principles, etc, so this is the important part of this project.
 
 ## ASP.Net Core Web Api
 This is the Api (backend). It is done with DDD Architecture. <br>
@@ -10,6 +10,20 @@ This is the Api (backend). It is done with DDD Architecture. <br>
 - Visual Studio 2022
 - .NET 5
 
+#### Another important specifications
+- Jwt
+- Api versioning
+- Logger
+- DbContext
+- Fluent validations
+- Swagger documentation
+- Dependency injection
+- Configuration variables
+- HttpClient
+- Mapping: **Dto** <-> **Entity** <-> **Data Model**
+
+<hr>
+
 ## ASP.NET Core Web App (MVC)
 This is de MVC Client (frontend). The user will navigate this app, that will request all the information to our Api.
 
@@ -18,8 +32,17 @@ This is de MVC Client (frontend). The user will navigate this app, that will req
 - Visual Studio 2022
 - .NET 5
 
+#### Another important specifications
+- Dependency injection
+- Configuration variables
+- HttpClient
+- Mapping: **ViewModel <-> Dto**
+- Session variables
+- Razor
+- 
 ## MySQL Database
 The Api is using MySql database. When the app starts, it receives the stocks from Alphavantage and insert them into MySql database.
+In my case, I am using a MySql located in my heroku.
 
 <hr>
 
@@ -56,19 +79,3 @@ The Api is using MySql database. When the app starts, it receives the stocks fro
 ````
 4. Run the API from Visual Studio, choosing Trading.Web.Api as the Startup Project.
 5. Run the MVC from Visual Studio, choosing TradingClient.Presentation.Website as the Startup Project.
-
-<hr>
-
-### Another apps specifications
-- Jwt (Api)
-- Api versioning (Api)
-- Logger (Api)
-- DbContext (Api)
-- Fluent validations (Api)
-- Swagger documentation (Api)
-- Dependency injection (Api, Mvc)
-- Configuration variables (Api, Mvc)
-- HttpClient (Api, Mvc)
-- Mapping: Dto - Entity -> Data Model (Api) / ViewModel -> Dto (Mvc)
-- Session variables (Mvc)
-- Razor (Mvc)
