@@ -21,7 +21,9 @@ This is de MVC Client (frontend). The user will navigate this app, that will req
 ## MySQL Database
 The Api is using MySql database. When the app starts, it receives the stocks from Alphavantage and insert them into MySql database.
 
-To download and run this app follow the next steps:
+<hr>
+
+### To download and run this app follow the next steps:
 > Development
 1. Download the repository in your local computer.
 2. In the API (Trading repository), go to appsettings.Development.json, and add the following configuration with your own information:
