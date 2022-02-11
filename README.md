@@ -25,6 +25,7 @@ Domain-driven design (DDD) is an approach to developing software for complex nee
 - HttpClient
 - Mapping: **Dto** <-> **Entity** <-> **Data Model**
 - Postman Collection
+- Pagination
 
 <hr>
 
