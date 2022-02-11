@@ -4,8 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
+using System.IO;
+using System.Reflection;
 using Trading.Application.Services;
 using Trading.Application.Services.Implementations;
 using Trading.Application.Services.Interfaces;
@@ -31,16 +34,10 @@ namespace Trading.Web.Api
 
             ConfigureApiServices(services);
 
-            services.AddApiVersioning(config => {
-                config.DefaultApiVersion = new ApiVersion(1, 0);
-                config.AssumeDefaultVersionWhenUnspecified = true;
-                config.ReportApiVersions = true;
-            });
+            ConfigureApiVersioning(services);
 
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Indra.Web.Api", Version = "v1" });
-
                 options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -62,12 +59,25 @@ namespace Trading.Web.Api
                             new string[] {}
                     }
                 });
+
+                // Swagger documentation
+                options.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Trading Api",
+                    Version = "v1"
+                });
+
+                var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IStockService stockService, IServiceProvider serviceProvider)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IStockService stockService, IServiceProvider serviceProvider, ILoggerFactory loggerFactory)
         {
+            // Logger
+            loggerFactory.AddFile("../Logs/mylog-{Date}.txt");
+
+            // Swagger
             app.UseDeveloperExceptionPage();
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Trading.Web.Api v1"));
@@ -85,12 +95,14 @@ namespace Trading.Web.Api
 
             var context = (TradingDbContext) serviceProvider.GetService(typeof(TradingDbContext));
 
+            // Database migrations
             context.Database.MigrateAsync().Wait();
 
+            // Stocks seeder
             stockService.SeedStocks(Configuration["ApiStocksUrl"], Configuration["StockAPIKey"]).Wait();
         }
 
-        //Application services configurations
+        //Api services injections
         public void ConfigureApiServices(IServiceCollection services)
         {
             DIConfiguration dIConfiguration = new();
@@ -101,6 +113,16 @@ namespace Trading.Web.Api
             services.AddScoped<IStockService, StockService>();
 
             services.AddScoped<IWalletService, WalletService>();
+        }
+
+        // Api versioning
+        public void ConfigureApiVersioning(IServiceCollection services)
+        {
+            services.AddApiVersioning(config => {
+                config.DefaultApiVersion = new ApiVersion(1, 0);
+                config.AssumeDefaultVersionWhenUnspecified = true;
+                config.ReportApiVersions = true;
+            });
         }
     }
 }

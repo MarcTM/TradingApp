@@ -25,6 +25,19 @@ namespace Trading.Web.Api.Controllers
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// Get user's wallets.
+        /// </summary>
+        /// <param name="version"></param>
+        /// <param name="username"></param>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /Wallet/{username}
+        ///
+        /// </remarks>
+        /// <returns>A wallets list from a user.</returns>
+
         [HttpGet("{username=username}")]
         [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IEnumerable<WalletDto>> GetWallet(string username)
@@ -40,6 +53,30 @@ namespace Trading.Web.Api.Controllers
 
             return walletsDto;
         }
+
+        /// <summary>
+        /// A user can buy a stock.
+        /// </summary>
+        /// <param name="version"></param>
+        /// <param name="Amount"></param>
+        /// <param name="Price"></param>
+        /// <param name="StockId"></param>
+        /// <param name="User"></param>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Wallet
+        ///     {
+        ///        "Amount": "10",
+        ///        "Price": "10",
+        ///        "StockId": 1,
+        ///        "User" {
+        ///             "Username": "Admin"
+        ///        }
+        ///     }
+        ///
+        /// </remarks>
+        /// <returns>The stock inserted in the wallet.</returns>
 
         [HttpPost()]
         [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]

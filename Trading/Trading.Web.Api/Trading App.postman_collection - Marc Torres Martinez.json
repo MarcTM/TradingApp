@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "5667cd5c-22c0-466e-b6b9-20daa3a68d2d",
+		"name": "Trading App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"postman@gmail.com\",\r\n    \"password\": \"postman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44364/api/v1.0/User/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"v1.0",
+						"User",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Postman\",\r\n    \"email\": \"postman@gmail.com\",\r\n    \"password\": \"postman\",\r\n    \"rpassword\": \"postman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44364/api/v1.0/User/register",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"v1.0",
+						"User",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetStocks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44364/api/v1.0/Stock?limit=20&offset=20",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"v1.0",
+						"Stock"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "20"
+						},
+						{
+							"key": "offset",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetStock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44364/api/v1.0/Stock/A",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"v1.0",
+						"Stock",
+						"A"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostWallet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJHdWlkIjoiOTE5OWFiMGMtNmY1Ni00NDc4LTlmZDctNzA1ZDZjMTgyMTNlIiwiVXNlcm5hbWUiOiJQb3N0bWFuIiwiRW1haWwiOiJwb3N0bWFuQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvZXhwaXJhdGlvbiI6ImZlYi4gc8OhYi4gMTIgMjAyMiAwOToyMTowMSAiLCJuYmYiOjE2NDQ1NzEyNjEsImV4cCI6MTY0NDY1NDA2MSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNjQiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM2NCJ9.wRnNtAacV2zCLBdfX8Ue7dITo_2up4BA3D_iXtJd_28",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Amount\": 10,\r\n    \"Price\": 10,\r\n    \"StockId\": 5060591,\r\n    \"User\": {\r\n        \"Username\": \"Postman\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44364/api/v1.0/Wallet",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"v1.0",
+						"Wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetWallet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJHdWlkIjoiOTE5OWFiMGMtNmY1Ni00NDc4LTlmZDctNzA1ZDZjMTgyMTNlIiwiVXNlcm5hbWUiOiJQb3N0bWFuIiwiRW1haWwiOiJwb3N0bWFuQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvZXhwaXJhdGlvbiI6ImZlYi4gc8OhYi4gMTIgMjAyMiAwOToyMTowMSAiLCJuYmYiOjE2NDQ1NzEyNjEsImV4cCI6MTY0NDY1NDA2MSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNjQiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM2NCJ9.wRnNtAacV2zCLBdfX8Ue7dITo_2up4BA3D_iXtJd_28",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44364/api/v1.0/Wallet/postman",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44364",
+					"path": [
+						"api",
+						"v1.0",
+						"Wallet",
+						"postman"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

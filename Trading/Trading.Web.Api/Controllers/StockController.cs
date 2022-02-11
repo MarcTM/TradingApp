@@ -22,6 +22,18 @@ namespace Trading.Web.Api.Controllers
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// Get a list of stocks paginated.
+        /// </summary>
+        /// <param name="version"></param>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /Stock
+        ///
+        /// </remarks>
+        /// <returns>A list of stocks.</returns>
+
         [HttpGet]
         public async Task<IEnumerable<StockDto>> GetPaginated([System.Web.Http.FromUri] int limit, [System.Web.Http.FromUri] int offset)
         {
@@ -41,6 +53,19 @@ namespace Trading.Web.Api.Controllers
             return stocksDto;
         }
 
+        /// <summary>
+        /// Get a stock by its symbol.
+        /// </summary>
+        /// <param name="version"></param>
+        /// <param name="symbol"></param>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /Stock/{symbol}
+        ///
+        /// </remarks>
+        /// <returns>A stock.</returns>
+        
         [HttpGet("{symbol}")]
         public async Task<StockDto> GetStock(string symbol)
         {
