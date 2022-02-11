@@ -56,3 +56,19 @@ The Api is using MySql database. When the app starts, it receives the stocks fro
 ````
 4. Run the API from Visual Studio, choosing Trading.Web.Api as the Startup Project.
 5. Run the MVC from Visual Studio, choosing TradingClient.Presentation.Website as the Startup Project.
+
+<hr>
+
+### Another apps specifications
+- Jwt (Api)
+- Api versioning (Api)
+- Logger (Api)
+- DbContext (Api)
+- Fluent validations (Api)
+- Swagger documentation (Api)
+- Dependency injection (Api, Mvc)
+- Configuration variables (Api, Mvc)
+- HttpClient (Api, Mvc)
+- Mapping: Dto - Entity -> Data Model (Api) / ViewModel -> Dto (Mvc)
+- Session variables (Mvc)
+- Razor (Mvc)
