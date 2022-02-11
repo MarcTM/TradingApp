@@ -1,5 +1,6 @@
 # Trading App
-This is a simple trading application done during the Capgemini .NET Bootcamp. The project consists in a trading app, so a user can add Stocks to his wallet. The stocks were given by an external api, Alphavantage, and then introduced in my database every time the app starts, to ensure new stocks introduced in their api are introduced in my database too. Even though the application does almost nothing, I have been trying to implement most of the things we have been learning in this app, like Design Patterns, SOLID Principles, etc, so this is the important part of this project.
+This is a simple trading application done during the Capgemini .NET Bootcamp. The project consists in a trading app, so a user can add Stocks to his wallet. The stocks were given by an external api, Alphavantage, and then introduced in my database every time the app starts, to ensure new stocks introduced in their api are introduced in my database too. Even though the application does almost nothing, I have been trying to implement most of the things we have been learning in this app, like Design Patterns, SOLID Principles, etc, so this is the important part of this project. <br>
+Domain-driven design (DDD) is an approach to developing software for complex needs by deeply connecting the implementation to an evolving model of the core business concepts.
 
 <hr>
 
