@@ -4,15 +4,15 @@ This is a simple trading application done during the Capgemini .NET Bootcamp. Th
 <hr>
 
 ## ASP.Net Core Web Api
-This is the Api (backend). It is done with DDD Architecture. <br>
+This is the Api (backend). It is done with DDD Architecture. <br><br>
 ![DDD Architecture](http://1.bp.blogspot.com/-f9QYYWLc1Uk/UoKzpDHYkkI/AAAAAAAACA4/OD1bq9MLYFY/s1600/DDD_png_pure.png)
 
-### Specifications:
+### App specifications:
 - IIS
 - Visual Studio 2022
 - .NET 5
 
-#### Another important specifications
+### Another important specifications
 - Jwt
 - Api versioning
 - Logger
@@ -29,12 +29,12 @@ This is the Api (backend). It is done with DDD Architecture. <br>
 ## ASP.NET Core Web App (MVC)
 This is de MVC Client (frontend). The user will navigate this app, that will request all the information to our Api.
 
-### Specifications:
+### App specifications:
 - IIS
 - Visual Studio 2022
 - .NET 5
 
-#### Another important specifications
+### Another important specifications
 - Dependency injection
 - Configuration variables
 - HttpClient
